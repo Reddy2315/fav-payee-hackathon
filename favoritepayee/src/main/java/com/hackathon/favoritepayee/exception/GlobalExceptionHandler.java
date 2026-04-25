@@ -23,7 +23,7 @@ public class GlobalExceptionHandler {
         ex.getBindingResult().getFieldErrors().forEach(error -> {
             errors.put(error.getField(), error.getDefaultMessage());
         });
-        MethodArgumentErrorResponse mr=new MethodArgumentErrorResponse(HttpStatus.BAD_REQUEST,"Validation failed",errors);
+        MethodArgumentErrorResponse mr=new MethodArgumentErrorResponse(HttpStatus.BAD_REQUEST.value(),"Validation failed",errors);
 
         return new ResponseEntity<>(mr, HttpStatus.BAD_REQUEST);
     }
@@ -34,7 +34,7 @@ public class GlobalExceptionHandler {
 
        
 
-        return new ResponseEntity<>(new  ErrorResponse(404,ex.getMessage()), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(new  ErrorResponse(HttpStatus.NOT_FOUND.value(),ex.getMessage()), HttpStatus.BAD_REQUEST);
     }
 	
 	
