@@ -32,7 +32,7 @@ public class Customer {
             orphanRemoval = true,
             fetch = FetchType.LAZY
     )
-    private List<FavouriteAccount> favouriteAccounts = new ArrayList<>();
+    private List<FavoriteAccount> favoriteAccounts = new ArrayList<>();
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
@@ -42,13 +42,13 @@ public class Customer {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    public void addFavouriteAccount(FavouriteAccount account) {
-        favouriteAccounts.add(account);
+    public void addFavoriteAccount(FavoriteAccount account) {
+        favoriteAccounts.add(account);
         account.setCustomer(this);
     }
 
-    public void removeFavouriteAccount(FavouriteAccount account) {
-        favouriteAccounts.remove(account);
+    public void removeFavoriteAccount(FavoriteAccount account) {
+        favoriteAccounts.remove(account);
         account.setCustomer(null);
     }
 }

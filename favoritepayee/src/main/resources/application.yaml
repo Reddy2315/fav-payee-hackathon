@@ -5,7 +5,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/favoritepayee
     username: postgres
-    password: 2003
+    password: pass@word1
 
   jpa:
     hibernate:
@@ -22,3 +22,22 @@ jwt:
     expiration-ms: 900000        # 15 minutes
   refresh-token:
     expiration-ms: 604800000     # 7 days
+
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+  endpoint:
+    health:
+      show-details: always
