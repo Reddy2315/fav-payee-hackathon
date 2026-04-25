@@ -34,7 +34,6 @@ public class FavoriteAccountServiceImpl implements FavoriteAccountService {
 
     private static final int MAX_FAVORITE_ACCOUNTS = 20;
 
-    // since the payload does not contain a customerId and JWT is removed.
     private static final Long DEFAULT_CUSTOMER_ID = 1L;
 
     @Override
