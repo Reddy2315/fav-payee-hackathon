@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FavoritepayeeApplication {
+public class FavoritePayeeApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(FavoritepayeeApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(FavoritePayeeApplication.class, args);
+    }
 
 }

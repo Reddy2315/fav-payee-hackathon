@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: favoritepayee
+
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/favoritepayee}
+    username: ${DATASOURCE_USERNAME:}
+    password: ${DATASOURCE_PASSWORD:}
+    driver-class-name: ${DATASOURCE_DRIVER_CLASS_NAME:org.postgresql.Driver}
+
+  jpa:
+    hibernate:
+      ddl-auto: ${DDL_AUTO:update}
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+server:
+  port: ${PORT:}
+  servlet:
+    context-path: ${SPRING_SERVER_CONTEXT_PATH:}
+
+jwt:
+  secret: ${JWT_SECRET:}
+  expiration: ${JWT_EXPIRATION:86400000} # 1 day in milliseconds
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+  endpoint:
+    health:
+      show-details: always
