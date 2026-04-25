@@ -1,3 +1,17 @@
 spring:
   application:
     name: favoritepayee
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/favoritepayee
+    username: postgres
+    password: 2003
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
