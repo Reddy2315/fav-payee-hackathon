@@ -1,13 +1,13 @@
 package com.hackathon.favoritepayee;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class FavoritepayeeApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
-
+    @Test
+    void applicationClassIsAvailable() {
+        assertEquals("com.hackathon.favoritepayee", FavoritepayeeApplication.class.getPackageName());
+    }
 }

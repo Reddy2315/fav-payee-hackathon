@@ -24,13 +24,13 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class FavouriteAccount {
+public class FavoriteAccount {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Owning side of Customer → FavouriteAccount
+    // Owning side of Customer → FavoriteAccount
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(
             name = "customer_id",
@@ -39,7 +39,7 @@ public class FavouriteAccount {
     )
     private Customer customer;
 
-    // Many FavouriteAccounts → One BankCode (lookup table)
+    // Many FavoriteAccounts → One BankCode (lookup table)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(
             name = "bank_code_id",
@@ -82,7 +82,7 @@ public class FavouriteAccount {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof FavouriteAccount that)) return false;
+        if (!(o instanceof FavoriteAccount that)) return false;
         return Objects.equals(iban, that.iban) &&
                 Objects.equals(customer, that.customer);
     }
